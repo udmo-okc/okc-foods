@@ -7,7 +7,7 @@
   "categories": {
     "mexican": {
       "id": "mexican",
-      "label": "Mexican & Latin",
+      "label": "🇲🇽 Mexican & Latin",
       "color": "#e85d26"
     },
     "restaurant": {
@@ -49,30 +49,170 @@
   "districts": [
     {
       "id": "mexican-authentic",
-      "name": "Mexican & Latin",
+      "name": "OKC 🇲🇽 Mexican & Latin",
       "description": "Authentic Mexican and Latin spots scattered across the city — the real ones the locals go to.",
       "color": "#e85d26",
       "spots": [
-        { "name": "Taqueria La Fondita", "category": "mexican", "status": "open", "hours": "9AM–9PM", "must": false, "note": "Solid neighborhood taqueria." },
-        { "name": "La Huasteca", "category": "mexican", "status": "open", "hours": "9AM–10PM", "must": false, "note": "Mexican grocery/deli hybrid — great finds inside." },
-        { "name": "El Birrias Restaurant", "category": "mexican", "status": "open", "hours": "9AM–9PM", "must": true, "note": "Birria done right." },
-        { "name": "El-7 Mares Restaurant", "category": "seafood", "status": "open", "hours": "10AM–10PM", "must": true, "note": "OKC's best mariscos. Order the seafood soup." },
-        { "name": "Birrieria Diaz", "category": "mexican", "status": "open", "hours": "8AM–9PM", "must": true, "note": "Early birria, great for weekends." },
-        { "name": "Mariscos Mazatlan", "category": "seafood", "status": "open", "hours": "10AM–10PM", "must": true, "note": "Seafood-forward and consistently good." },
-        { "name": "Mariscos El Bucanero", "category": "seafood", "status": "open", "hours": "10AM–10PM", "must": false, "note": "Another strong mariscos option south side." },
-        { "name": "El Chilango", "category": "mexican", "status": "open", "hours": "9AM–11PM", "must": false, "note": "Late-night Mexican, open til 11." },
-        { "name": "Taqueria La Esquina", "category": "mexican", "status": "open", "hours": "7AM–10PM", "must": false, "note": "Early opener, good for breakfast tacos." },
-        { "name": "El sabor de la baja", "category": "seafood", "status": "opening-soon", "hours": "11AM–10PM", "must": false, "note": "Baja-style seafood — opening soon." },
-        { "name": "Barbacoa y Pollos LA PENCA", "category": "mexican", "status": "open", "hours": "10AM–8PM", "must": false, "note": "Barbacoa and rotisserie chicken." },
-        { "name": "Taqueria Tijuana By La Baja", "category": "mexican", "status": "open", "hours": "12PM–10PM", "must": false, "note": "Latin American with TJ-style flair." },
-        { "name": "El Tarasco Taqueria", "category": "mexican", "status": "open", "hours": "10AM–10PM", "must": false, "note": "" },
-        { "name": "El Tarasco Restaurant", "category": "mexican", "status": "open", "hours": "10AM–10PM", "must": false, "note": "" },
-        { "name": "Los Arados Taqueria & Cenadoria", "category": "mexican", "status": "open", "hours": "10AM–11PM", "must": false, "note": "Late dinners, great for groups." },
-        { "name": "El Patio", "category": "mexican", "status": "open", "hours": "8AM–10PM", "must": false, "note": "OKC classic." },
-        { "name": "Birrieria Calvillo", "category": "mexican", "status": "open", "hours": "8AM–7PM", "must": false, "note": "" },
-        { "name": "Super Tortas El Chavo", "category": "mexican", "status": "open", "hours": "9AM–10PM", "must": true, "note": "Tortas are massive. Don't sleep on this one." },
-        { "name": "Cafe Kacao", "category": "restaurant", "status": "open", "hours": "7:30AM–2:30PM", "must": true, "note": "Guatemalan brunch. Voted Best Brunch in OKC. Join waitlist ahead of time." },
-        { "name": "Cafe Antigua", "category": "coffee", "status": "open", "hours": "8AM–3PM", "must": false, "note": "Breakfast and brunch spot." }
+        {
+          "name": "Taqueria La Fondita",
+          "category": "mexican",
+          "status": "open",
+          "hours": "9AM–9PM",
+          "must": false,
+          "note": "Solid neighborhood taqueria."
+        },
+        {
+          "name": "La Huasteca",
+          "category": "mexican",
+          "status": "open",
+          "hours": "9AM–10PM",
+          "must": false,
+          "note": "Mexican grocery/deli hybrid — great finds inside."
+        },
+        {
+          "name": "El Birrias Restaurant",
+          "category": "mexican",
+          "status": "open",
+          "hours": "9AM–9PM",
+          "must": true,
+          "note": "Birria done right."
+        },
+        {
+          "name": "El-7 Mares Restaurant",
+          "category": "seafood",
+          "status": "open",
+          "hours": "10AM–10PM",
+          "must": true,
+          "note": "OKC's best mariscos. Order the seafood soup."
+        },
+        {
+          "name": "Birrieria Diaz",
+          "category": "mexican",
+          "status": "open",
+          "hours": "8AM–9PM",
+          "must": true,
+          "note": "Early birria, great for weekends."
+        },
+        {
+          "name": "Mariscos Mazatlan",
+          "category": "seafood",
+          "status": "open",
+          "hours": "10AM–10PM",
+          "must": true,
+          "note": "Seafood-forward and consistently good."
+        },
+        {
+          "name": "Mariscos El Bucanero",
+          "category": "seafood",
+          "status": "open",
+          "hours": "10AM–10PM",
+          "must": false,
+          "note": "Another strong mariscos option south side."
+        },
+        {
+          "name": "El Chilango",
+          "category": "mexican",
+          "status": "open",
+          "hours": "9AM–11PM",
+          "must": false,
+          "note": "Late-night Mexican, open til 11."
+        },
+        {
+          "name": "Taqueria La Esquina",
+          "category": "mexican",
+          "status": "open",
+          "hours": "7AM–10PM",
+          "must": false,
+          "note": "Early opener, good for breakfast tacos."
+        },
+        {
+          "name": "El sabor de la baja",
+          "category": "seafood",
+          "status": "opening-soon",
+          "hours": "11AM–10PM",
+          "must": false,
+          "note": "Baja-style seafood — opening soon."
+        },
+        {
+          "name": "Barbacoa y Pollos LA PENCA",
+          "category": "mexican",
+          "status": "open",
+          "hours": "10AM–8PM",
+          "must": false,
+          "note": "Barbacoa and rotisserie chicken."
+        },
+        {
+          "name": "Taqueria Tijuana By La Baja",
+          "category": "mexican",
+          "status": "open",
+          "hours": "12PM–10PM",
+          "must": false,
+          "note": "Latin American with TJ-style flair."
+        },
+        {
+          "name": "El Tarasco Taqueria",
+          "category": "mexican",
+          "status": "open",
+          "hours": "10AM–10PM",
+          "must": false,
+          "note": "Counter-service taqueria, solid al pastor and carnitas."
+        },
+        {
+          "name": "El Tarasco Restaurant",
+          "category": "mexican",
+          "status": "open",
+          "hours": "10AM–10PM",
+          "must": false,
+          "note": "Full sit-down version of El Tarasco — same kitchen, more room."
+        },
+        {
+          "name": "Los Arados Taqueria & Cenadoria",
+          "category": "mexican",
+          "status": "open",
+          "hours": "10AM–11PM",
+          "must": false,
+          "note": "Late dinners, great for groups."
+        },
+        {
+          "name": "El Patio",
+          "category": "mexican",
+          "status": "open",
+          "hours": "8AM–10PM",
+          "must": false,
+          "note": "OKC classic."
+        },
+        {
+          "name": "Birrieria Calvillo",
+          "category": "mexican",
+          "status": "open",
+          "hours": "8AM–7PM",
+          "must": false,
+          "note": "Family-run birria spot, early hours make it a great weekend morning stop."
+        },
+        {
+          "name": "Super Tortas El Chavo",
+          "category": "mexican",
+          "status": "open",
+          "hours": "9AM–10PM",
+          "must": true,
+          "note": "Tortas are massive. Don't sleep on this one."
+        },
+        {
+          "name": "Cafe Kacao",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "7:30AM–2:30PM",
+          "must": true,
+          "note": "Guatemalan brunch. Voted Best Brunch in OKC. Join waitlist ahead of time."
+        },
+        {
+          "name": "Cafe Antigua",
+          "category": "coffee",
+          "status": "open",
+          "hours": "8AM–3PM",
+          "must": false,
+          "note": "Breakfast and brunch spot."
+        }
       ]
     },
     {
@@ -81,20 +221,118 @@
       "description": "OKC's artsy neighborhood strip — murals, live music, indie shops, and some of the city's most talked-about restaurants.",
       "color": "#c4a44a",
       "spots": [
-        { "name": "Ma Der Lao Kitchen", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "NYT and Bon Appétit Best New Restaurant. Lao cuisine, genuinely extraordinary." },
-        { "name": "The Mule", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Best sandwich in OKC. Order the namesake." },
-        { "name": "Empire Slice House", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Late-night pizza by the slice, great vibe." },
-        { "name": "The Press", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Up-Down OKC", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "Arcade bar. Fun for groups." },
-        { "name": "Good for a Few", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": true, "note": "Speakeasy with exceptional cocktails. One of OKC's best kept secrets." },
-        { "name": "Roxy's Ice Cream Social", "category": "bakery", "status": "open", "hours": "Varies", "must": false, "note": "Ice cream worth the stop." },
-        { "name": "Pie Junkie", "category": "bakery", "status": "open", "hours": "Varies", "must": true, "note": "Rotating pie menu. Always get a slice." },
-        { "name": "Lyric Theatre of Oklahoma", "category": "activity", "status": "open", "hours": "Varies", "must": false, "note": "Monthly live performances." },
-        { "name": "Dig It Boutique", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "DNA Galleries", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Out On A Limb Boutique", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Collected Thread", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Bad Granny's Bazaar", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Ma Der Lao Kitchen",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "NYT and Bon Appétit Best New Restaurant. Lao cuisine, genuinely extraordinary."
+        },
+        {
+          "name": "The Mule",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Best sandwich in OKC. Order the namesake."
+        },
+        {
+          "name": "Empire Slice House",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Late-night pizza by the slice, great vibe."
+        },
+        {
+          "name": "The Press",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Upscale comfort food and cocktails in a relaxed Plaza setting."
+        },
+        {
+          "name": "Up-Down OKC",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Arcade bar. Fun for groups."
+        },
+        {
+          "name": "Good for a Few",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Speakeasy with exceptional cocktails. One of OKC's best kept secrets."
+        },
+        {
+          "name": "Roxy's Ice Cream Social",
+          "category": "bakery",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Ice cream worth the stop."
+        },
+        {
+          "name": "Pie Junkie",
+          "category": "bakery",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Rotating pie menu. Always get a slice."
+        },
+        {
+          "name": "Lyric Theatre of Oklahoma",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Monthly live performances."
+        },
+        {
+          "name": "Dig It Boutique",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Curated women's clothing and accessories with an eclectic edge."
+        },
+        {
+          "name": "DNA Galleries",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Contemporary fine art gallery anchoring the Plaza's visual art scene."
+        },
+        {
+          "name": "Out On A Limb Boutique",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Fun, colorful women's boutique with gifts and accessories."
+        },
+        {
+          "name": "Collected Thread",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Thoughtfully sourced clothing and home goods, locally owned."
+        },
+        {
+          "name": "Bad Granny's Bazaar",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Quirky vintage and handmade goods market. Always something unexpected."
+        }
       ]
     },
     {
@@ -103,12 +341,54 @@
       "description": "Weekend farmers market energy, plant shops, and some unexpectedly great food.",
       "color": "#4a8b6f",
       "spots": [
-        { "name": "Palo Santo", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Creative, ingredient-forward cooking in a beautiful space." },
-        { "name": "The Loaded Bowl", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Vegan-friendly bowls." },
-        { "name": "The Powerhouse", "category": "coffee", "status": "open", "hours": "Varies", "must": false, "note": "Coffee in a converted powerhouse building." },
-        { "name": "Pam's Plants", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Urban Agrarian", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "Local goods, produce, and pantry staples." },
-        { "name": "Mexican Market", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Palo Santo",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Creative, ingredient-forward cooking in a beautiful space."
+        },
+        {
+          "name": "The Loaded Bowl",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Vegan-friendly bowls."
+        },
+        {
+          "name": "The Powerhouse",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Coffee in a converted powerhouse building."
+        },
+        {
+          "name": "Pam's Plants",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Beloved local plant shop at the Farmers Market — great selection."
+        },
+        {
+          "name": "Urban Agrarian",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Local goods, produce, and pantry staples."
+        },
+        {
+          "name": "Mexican Market",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Open-air market with produce, spices, and imported Mexican goods."
+        }
       ]
     },
     {
@@ -117,28 +397,174 @@
       "description": "Historic buildings, James Beard-nominated bars, and OKC's most decorated dining pedigree.",
       "color": "#7b5ea7",
       "spots": [
-        { "name": "Nonesuch", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Bon Appétit's America's Best New Restaurant 2018. Tasting menu, book ahead." },
-        { "name": "Later Bye", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": true, "note": "James Beard nominated. The cocktail bar OKC deserves." },
-        { "name": "The Goose", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Deli sandwiches. Burgers. Craft cocktails. Beer. Rooftop patio." },
-        { "name": "Harvey Bakery", "category": "bakery", "status": "open", "hours": "Varies", "must": true, "note": "Best pastries in OKC." },
-        { "name": "The Hall's Pizza Kitchen", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Barrios Fine Mexican Dishes", "category": "mexican", "status": "open", "hours": "Varies", "must": false, "note": "Upscale Mexican, a long-time OKC staple." },
-        { "name": "Tamashii Ramen", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Stella Modern Italian Cuisine", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Waffle Champion", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Waffle sandwiches worth the hype." },
-        { "name": "McNellie's", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "Great beer selection, pub staple." },
-        { "name": "Neighborhood JAM", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Brunch spot." },
-        { "name": "8th Street Market", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Elemental Coffee", "category": "coffee", "status": "open", "hours": "Varies", "must": false, "note": "Excellent pour-overs. Also has a Downtown location." },
-        { "name": "Prairie Artisan Ales", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "Award-winning craft brewery." },
-        { "name": "R&J's Supper Club", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Dust Bowl Lanes & Lounge", "category": "activity", "status": "open", "hours": "Varies", "must": false, "note": "Bowling + cocktails." },
-        { "name": "Fassler Hall", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "German beer hall vibes." },
-        { "name": "Black Scintilla", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "TRADE Men's Wares", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Chirps and Cheers", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Commonplace Books", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "Independent bookstore." },
-        { "name": "Plant People Shop", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Nonesuch",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Bon Appétit's America's Best New Restaurant 2018. Tasting menu, book ahead."
+        },
+        {
+          "name": "LATER BYE",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "James Beard nominated. The cocktail bar OKC deserves."
+        },
+        {
+          "name": "Harvey Bakery",
+          "category": "bakery",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Best pastries in OKC."
+        },
+        {
+          "name": "The Hall's Pizza Kitchen",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Wood-fired pizza in a lively Midtown space. Great for groups."
+        },
+        {
+          "name": "Barrios Fine Mexican Dishes",
+          "category": "mexican",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Upscale Mexican, a long-time OKC staple."
+        },
+        {
+          "name": "Tamashii Ramen",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Solid ramen in the heart of Midtown — tonkotsu is the move."
+        },
+        {
+          "name": "Stella Modern Italian Cuisine",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Refined Italian with a rotating seasonal menu. Good wine list."
+        },
+        {
+          "name": "Waffle Champion",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Waffle sandwiches worth the hype."
+        },
+        {
+          "name": "McNellie's",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Great beer selection, pub staple."
+        },
+        {
+          "name": "Neighborhood JAM",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Brunch spot."
+        },
+        {
+          "name": "8th Street Market",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Neighborhood market and deli with local produce and grab-and-go options."
+        },
+        {
+          "name": "Elemental Coffee",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Excellent pour-overs. Also has a Downtown location."
+        },
+        {
+          "name": "Prairie Artisan Ales",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Award-winning craft brewery."
+        },
+        {
+          "name": "R&J's Supper Club",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Throwback supper club vibe — strong cocktails and good late-night energy."
+        },
+        {
+          "name": "Dust Bowl Lanes & Lounge",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Bowling + cocktails."
+        },
+        {
+          "name": "Fassler Hall",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "German beer hall vibes."
+        },
+        {
+          "name": "Black Scintilla",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Edgy jewelry and accessories. One of OKC's more distinctive boutiques."
+        },
+        {
+          "name": "TRADE Men's Wares",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Well-edited men's shop with clothing, grooming, and lifestyle goods."
+        },
+        {
+          "name": "Chirps and Cheers",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Parrot cafe and bar — yes, there are parrots. Genuinely fun."
+        },
+        {
+          "name": "Commonplace Books",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Independent bookstore."
+        },
+        {
+          "name": "Plant People Shop",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Small-batch plants and botanicals in a beautifully designed space."
+        }
       ]
     },
     {
@@ -147,20 +573,118 @@
       "description": "Retro energy, iconic venues, great burgers, and OKC's best dive bars. The Tower Theater anchors it all.",
       "color": "#d4875e",
       "spots": [
-        { "name": "Tucker's Onion Burgers", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Oklahoma onion smash burger. An OKC institution." },
-        { "name": "Cheever's Cafe", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "OKC classic in a converted flower shop." },
-        { "name": "Big Truck Tacos", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "The Drake", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Pizzeria Gusto", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Neapolitan-style pizza." },
-        { "name": "Pony Boy", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Bunker Bar", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Blue Note", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": true, "note": "Burlesque and jazz. Truly one of a kind." },
-        { "name": "Mesta Park", "category": "activity", "status": "open", "hours": "Always", "must": false, "note": "Sand volleyball and a cute neighborhood park." },
-        { "name": "Tower Theater", "category": "activity", "status": "open", "hours": "Varies", "must": true, "note": "Iconic OKC music venue." },
-        { "name": "Guestroom Records", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "Excellent vinyl selection." },
-        { "name": "Gretta Sloane", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Swaddle Boutique", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Gold Dome", "category": "activity", "status": "open", "hours": "Varies", "must": false, "note": "Iconic gold geodesic dome landmark." }
+        {
+          "name": "Tucker's Onion Burgers",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Oklahoma onion smash burger. An OKC institution."
+        },
+        {
+          "name": "Cheever's Cafe",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "OKC classic in a converted flower shop."
+        },
+        {
+          "name": "Big Truck Tacos",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "OKC original street taco spot — creative fillings, solid margaritas."
+        },
+        {
+          "name": "The Drake",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Neighborhood bar with dependable food and a good back patio."
+        },
+        {
+          "name": "Pizzeria Gusto",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Neapolitan-style pizza."
+        },
+        {
+          "name": "Pony Boy",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Dimly lit dive with cheap drinks and a loyal 23rd Street crowd."
+        },
+        {
+          "name": "Bunker Bar",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Underground bar with a gritty, unpretentious feel."
+        },
+        {
+          "name": "Blue Note",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Burlesque and jazz. Truly one of a kind."
+        },
+        {
+          "name": "Mesta Park",
+          "category": "activity",
+          "status": "open",
+          "hours": "Always",
+          "must": false,
+          "note": "Sand volleyball and a cute neighborhood park."
+        },
+        {
+          "name": "Tower Theater",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Iconic OKC music venue."
+        },
+        {
+          "name": "Guestroom Records",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Excellent vinyl selection."
+        },
+        {
+          "name": "Gretta Sloane",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Contemporary women's fashion boutique with an elevated selection."
+        },
+        {
+          "name": "Swaddle Boutique",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Baby and children's boutique with thoughtful gift options."
+        },
+        {
+          "name": "Gold Dome",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Iconic gold geodesic dome landmark."
+        }
       ]
     },
     {
@@ -169,20 +693,118 @@
       "description": "OKC's oldest arts district. Spanish Revival architecture, galleries, First Friday events, and some great hidden food.",
       "color": "#2e7d9e",
       "spots": [
-        { "name": "Frida Southwest", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Beautifully plated Southwestern cuisine inside a gallery-like space." },
-        { "name": "Goro Ramen", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Some of the best ramen in the state." },
-        { "name": "Picasso Café", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Neighborhood café with art on every wall." },
-        { "name": "Sauced", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "OSO", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "30th St. Market", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "The Other Room", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Holey Rollers", "category": "coffee", "status": "open", "hours": "Varies", "must": true, "note": "Coffee and donuts, wildly popular on weekends." },
-        { "name": "First Friday Gallery Walk", "category": "activity", "status": "open", "hours": "Monthly", "must": true, "note": "First Friday of every month — free gallery openings across the district." },
-        { "name": "Paseo Gallery One", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Studio Six", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "JRB Art at the Elms", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Betsy King: A Shoe Boutique", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Paseo Artworks", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Frida Southwest",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Beautifully plated Southwestern cuisine inside a gallery-like space."
+        },
+        {
+          "name": "Goro Ramen",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Some of the best ramen in the state."
+        },
+        {
+          "name": "Picasso Café",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Neighborhood café with art on every wall."
+        },
+        {
+          "name": "Sauced",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Pasta and Italian-leaning small plates in a casual Paseo space."
+        },
+        {
+          "name": "OSO",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Intimate spot with creative seasonal cocktails and small plates."
+        },
+        {
+          "name": "30th St. Market",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Corner market and deli tucked into the Paseo — great for a quick bite."
+        },
+        {
+          "name": "The Other Room",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Low-key neighborhood bar just off the main Paseo strip."
+        },
+        {
+          "name": "Holey Rollers",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Coffee and donuts, wildly popular on weekends."
+        },
+        {
+          "name": "First Friday Gallery Walk",
+          "category": "activity",
+          "status": "open",
+          "hours": "Monthly",
+          "must": true,
+          "note": "First Friday of every month — free gallery openings across the district."
+        },
+        {
+          "name": "Paseo Gallery One",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Long-running commercial gallery showing regional and national artists."
+        },
+        {
+          "name": "Studio Six",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Artist studios and gallery space in the historic Paseo building."
+        },
+        {
+          "name": "JRB Art at the Elms",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "One of OKC's premier contemporary galleries. Worth a serious look."
+        },
+        {
+          "name": "Betsy King: A Shoe Boutique",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Independent shoe boutique with carefully selected brands."
+        },
+        {
+          "name": "Paseo Artworks",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Gallery and working studio space in the heart of the arts district."
+        }
       ]
     },
     {
@@ -191,17 +813,94 @@
       "description": "Upscale dining, award-winning sushi, wine bars, and OKC's most polished shopping corridor.",
       "color": "#8b6347",
       "spots": [
-        { "name": "Sushi Neko", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Multi-award winning sushi. OKC's best Japanese." },
-        { "name": "Tokyo Sushi", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Award-winning alongside Sushi Neko — both are worth visiting." },
-        { "name": "The Metro Wine Bar & Bistro", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "The Drum Room", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Café 501", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Bin 73 Wine Bar", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Will Rogers Theatre", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "Cocktail lounge in a historic theater." },
-        { "name": "Balliet's", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "OKC's premier fashion boutique." },
-        { "name": "Kendra Scott", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Heirloom Shoe", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "New Leaf Florist", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Sushi Neko",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Multi-award winning sushi. OKC's best Japanese."
+        },
+        {
+          "name": "Tokyo Sushi",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Award-winning alongside Sushi Neko — both are worth visiting."
+        },
+        {
+          "name": "The Metro Wine Bar & Bistro",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "French-leaning wine bar with an impressive by-the-glass selection."
+        },
+        {
+          "name": "The Drum Room",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Live music venue and bar inside the Ambassador Hotel."
+        },
+        {
+          "name": "Café 501",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Long-running bistro with a broad menu and reliable brunch service."
+        },
+        {
+          "name": "Bin 73 Wine Bar",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Cozy wine bar with knowledgeable staff and a well-curated list."
+        },
+        {
+          "name": "Will Rogers Theatre",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Cocktail lounge in a historic theater."
+        },
+        {
+          "name": "Balliet's",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "OKC's premier fashion boutique."
+        },
+        {
+          "name": "Kendra Scott",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Jewelry brand flagship with the color bar experience."
+        },
+        {
+          "name": "Heirloom Shoe",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Carefully selected footwear — men's and women's, independent brands."
+        },
+        {
+          "name": "New Leaf Florist",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Design-forward florist and plant shop on the Avenue."
+        }
       ]
     },
     {
@@ -210,16 +909,86 @@
       "description": "Historic car dealerships converted into restaurants and galleries. Neon signs, brick facades, and a walkable stretch that rewards exploration.",
       "color": "#5e8bd4",
       "spots": [
-        { "name": "Broadway 10 Bar & Chophouse", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Hatch Early Mood Food", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Breakfast and brunch with serious technique." },
-        { "name": "Sidecar Barley & Wine Bar", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Red PrimeSteak", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Café 7", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Coffee Slingers Roasters", "category": "coffee", "status": "open", "hours": "Varies", "must": true, "note": "OKC's best specialty coffee roaster." },
-        { "name": "Plenty Mercantile", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Factory Obscura", "category": "activity", "status": "open", "hours": "Varies", "must": true, "note": "Immersive art installation. A genuinely wild experience." },
-        { "name": "Shop Good", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Good Earth Rocks Gallery", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Broadway 10 Bar & Chophouse",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Steaks and cocktails in a polished Automobile Alley setting."
+        },
+        {
+          "name": "Hatch Early Mood Food",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Breakfast and brunch with serious technique."
+        },
+        {
+          "name": "Sidecar Barley & Wine Bar",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Craft beer and wine bar — solid rotating tap list."
+        },
+        {
+          "name": "Red PrimeSteak",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Upscale steakhouse with a strong bar program and bold interiors."
+        },
+        {
+          "name": "Café 7",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Casual café for coffee, pastries, and light bites in Automobile Alley."
+        },
+        {
+          "name": "Coffee Slingers Roasters",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "OKC's best specialty coffee roaster."
+        },
+        {
+          "name": "Plenty Mercantile",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Thoughtfully curated gifts, goods, and local products."
+        },
+        {
+          "name": "Factory Obscura",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Immersive art installation. A genuinely wild experience."
+        },
+        {
+          "name": "Shop Good",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Sustainable and ethical goods — clothing, home, and beauty."
+        },
+        {
+          "name": "Good Earth Rocks Gallery",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Crystals, minerals, and fossils in a beautiful retail space."
+        }
       ]
     },
     {
@@ -228,13 +997,62 @@
       "description": "OKC's most diverse food corridor. Pho, dim sum, Asian grocers, and a brunch spot with a permanent waitlist.",
       "color": "#c4a44a",
       "spots": [
-        { "name": "Cafe Kacao", "category": "restaurant", "status": "open", "hours": "7:30AM–2:30PM", "must": true, "note": "Guatemalan brunch. Voted Best Brunch in OKC. Join waitlist ahead of time." },
-        { "name": "Pho Lien Hoa", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "OKC's most beloved pho spot. Cash only." },
-        { "name": "Golden Phoenix", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Grand House China Bistro", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Super Cao Nguyen Market", "category": "shop", "status": "open", "hours": "Varies", "must": true, "note": "Massive Asian grocery. A must-visit even if you just browse." },
-        { "name": "Chinatown Supermarket", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "23rd Street Antique Mall", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Cafe Kacao",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "7:30AM–2:30PM",
+          "must": true,
+          "note": "Guatemalan brunch. Voted Best Brunch in OKC. Join waitlist ahead of time."
+        },
+        {
+          "name": "Pho Lien Hoa",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "OKC's most beloved pho spot. Cash only."
+        },
+        {
+          "name": "Golden Phoenix",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Cantonese dim sum and Chinese classics — go for the weekend dim sum."
+        },
+        {
+          "name": "Grand House China Bistro",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Upscale Chinese dining with a broad menu and banquet-style service."
+        },
+        {
+          "name": "Super Cao Nguyen Market",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Massive Asian grocery. A must-visit even if you just browse."
+        },
+        {
+          "name": "Chinatown Supermarket",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Well-stocked Asian grocery with a wide range of fresh and pantry goods."
+        },
+        {
+          "name": "23rd Street Antique Mall",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Multi-dealer antique mall with a huge range — plan to spend time."
+        }
       ]
     },
     {
@@ -243,13 +1061,62 @@
       "description": "OKC's LGBTQ+ neighborhood. Drag shows, pride events, and a welcoming community that knows how to have a good time.",
       "color": "#e85d9e",
       "spots": [
-        { "name": "The Boom!", "category": "activity", "status": "open", "hours": "Varies", "must": true, "note": "Drag shows! OKC's LGBTQ+ anchor bar. Always a great time. 🙂" },
-        { "name": "Phoenix Rising", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Rainbow Bistro", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "District House", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Apothecary", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Green Bambino", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Pride Parade", "category": "activity", "status": "open", "hours": "Annual", "must": true, "note": "Annual Pride Parade through the neighborhood." }
+        {
+          "name": "The Boom!",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Drag shows! OKC's LGBTQ+ anchor bar. Always a great time. 🙂"
+        },
+        {
+          "name": "Phoenix Rising",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Bar and restaurant in the 39th Street corridor with a welcoming vibe."
+        },
+        {
+          "name": "Rainbow Bistro",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "LGBTQ+ friendly bar and restaurant, casual and comfortable."
+        },
+        {
+          "name": "District House",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Neighborhood bar with a strong local following on 39th."
+        },
+        {
+          "name": "Apothecary",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Craft cocktail bar with a botanical menu and intimate atmosphere."
+        },
+        {
+          "name": "Green Bambino",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Children's boutique with sustainable and locally made options."
+        },
+        {
+          "name": "Pride Parade",
+          "category": "activity",
+          "status": "open",
+          "hours": "Annual",
+          "must": true,
+          "note": "Annual Pride Parade through the neighborhood."
+        }
       ]
     },
     {
@@ -258,16 +1125,86 @@
       "description": "OKC's entertainment history preserved and reimagined — the Jones Assembly anchors a stretch of art, film, and food.",
       "color": "#7b5ea7",
       "spots": [
-        { "name": "The Jones Assembly", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Restaurant + live music venue. One of OKC's best. Book a table on show nights." },
-        { "name": "Joey's Pizzeria", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "The Paramount Room", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Stitch Cafe", "category": "coffee", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "The Study", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Perets Dessert & Coffee Bar", "category": "coffee", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Prairie Artisan Ales", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "Second location of OKC's best craft brewery." },
-        { "name": "Film Row Frames", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Retro OKC", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Odd Fab Design Lab", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "The Jones Assembly",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Restaurant + live music venue. One of OKC's best. Book a table on show nights."
+        },
+        {
+          "name": "Joey's Pizzeria",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "New York-style pizza by the slice on Film Row. Late-night staple."
+        },
+        {
+          "name": "The Paramount Room",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Cocktail bar in a beautifully restored Film Row space."
+        },
+        {
+          "name": "Stitch Cafe",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Coffee and light bites in a cozy Film Row setting."
+        },
+        {
+          "name": "The Study",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Cocktail bar with a literary theme and well-crafted drinks."
+        },
+        {
+          "name": "Perets Dessert & Coffee Bar",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Desserts, coffee, and late-night sweet options on Film Row."
+        },
+        {
+          "name": "Prairie Artisan Ales",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Second location of OKC's best craft brewery."
+        },
+        {
+          "name": "Film Row Frames",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Custom framing shop in the historic Film Row district."
+        },
+        {
+          "name": "Retro OKC",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Vintage clothing and OKC nostalgia — great for gifts and browsing."
+        },
+        {
+          "name": "Odd Fab Design Lab",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Creative studio and shop with locally designed goods."
+        }
       ]
     },
     {
@@ -276,17 +1213,94 @@
       "description": "The city center — nationally recognized restaurants, Scissortail Park, and the Memorial. Anchored by some of OKC's most ambitious dining.",
       "color": "#4a8b6f",
       "spots": [
-        { "name": "Sedalia's Oyster & Seafood", "category": "seafood", "status": "open", "hours": "Varies", "must": true, "note": "Bon Appétit's Best New Restaurants 2023. Oysters, seafood, and an excellent bar." },
-        { "name": "Vast", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Fine dining on the 49th floor of the Devon Tower. Views are unreal." },
-        { "name": "Kitchen No. 324", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Great brunch cocktails." },
-        { "name": "Mahogany Prime Steakhouse", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Elemental Coffee (Downtown)", "category": "coffee", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Clarity", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Myriad Botanical Gardens", "category": "activity", "status": "open", "hours": "Varies", "must": true, "note": "Free to visit. Crystal Bridge conservatory inside is worth the $." },
-        { "name": "Scissortail Park", "category": "activity", "status": "open", "hours": "Always", "must": true, "note": "OKC's answer to Central Park. Outdoor concerts and events year-round." },
-        { "name": "OKC National Memorial & Museum", "category": "activity", "status": "open", "hours": "Varies", "must": true, "note": "Somber and powerful. Don't skip it." },
-        { "name": "The Plant Shoppe", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Painted Door", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Sedalia's Oyster & Seafood",
+          "category": "seafood",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Bon Appétit's Best New Restaurants 2023. Oysters, seafood, and an excellent bar."
+        },
+        {
+          "name": "Vast",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Fine dining on the 49th floor of the Devon Tower. Views are unreal."
+        },
+        {
+          "name": "Kitchen No. 324",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Great brunch cocktails."
+        },
+        {
+          "name": "Mahogany Prime Steakhouse",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Classic steakhouse in the heart of Downtown — power lunch territory."
+        },
+        {
+          "name": "Elemental Coffee (Downtown)",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Downtown outpost of OKC's best specialty coffee roaster."
+        },
+        {
+          "name": "Clarity",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Upscale cocktail bar Downtown with a rotating seasonal menu."
+        },
+        {
+          "name": "Myriad Botanical Gardens",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Free to visit. Crystal Bridge conservatory inside is worth the $."
+        },
+        {
+          "name": "Scissortail Park",
+          "category": "activity",
+          "status": "open",
+          "hours": "Always",
+          "must": true,
+          "note": "OKC's answer to Central Park. Outdoor concerts and events year-round."
+        },
+        {
+          "name": "OKC National Memorial & Museum",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Somber and powerful. Don't skip it."
+        },
+        {
+          "name": "The Plant Shoppe",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Downtown plant boutique with a curated selection of indoor plants."
+        },
+        {
+          "name": "Painted Door",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Gift shop with locally made goods, cards, and home accessories."
+        }
       ]
     },
     {
@@ -295,13 +1309,62 @@
       "description": "OKC's entertainment district along the canal. Tourist-friendly, but worth hitting for a game, a brewery, and a water taxi ride.",
       "color": "#d4875e",
       "spots": [
-        { "name": "Mickey Mantle's Steakhouse", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "OKC baseball legend's namesake steakhouse on the canal." },
-        { "name": "Bricktown Brewery", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Charleston's Restaurant", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "TapWerks Ale House", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "100+ taps. Good for a group." },
-        { "name": "Bricktown Canal", "category": "activity", "status": "open", "hours": "Always", "must": true, "note": "Walk the canal. Water taxis available." },
-        { "name": "Chickasaw Bricktown Ballpark", "category": "activity", "status": "open", "hours": "Game days", "must": false, "note": "Minor League Baseball. Great cheap date night." },
-        { "name": "Bricktown Candy Company", "category": "shop", "status": "open", "hours": "Varies", "must": false, "note": "" }
+        {
+          "name": "Mickey Mantle's Steakhouse",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "OKC baseball legend's namesake steakhouse on the canal."
+        },
+        {
+          "name": "Bricktown Brewery",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "OKC's original brewpub — solid house beers and pub food on the canal."
+        },
+        {
+          "name": "Charleston's Restaurant",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Dependable American dining with a broad menu and good service."
+        },
+        {
+          "name": "TapWerks Ale House",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "100+ taps. Good for a group."
+        },
+        {
+          "name": "Bricktown Canal",
+          "category": "activity",
+          "status": "open",
+          "hours": "Always",
+          "must": true,
+          "note": "Walk the canal. Water taxis available."
+        },
+        {
+          "name": "Chickasaw Bricktown Ballpark",
+          "category": "activity",
+          "status": "open",
+          "hours": "Game days",
+          "must": false,
+          "note": "Minor League Baseball. Great cheap date night."
+        },
+        {
+          "name": "Bricktown Candy Company",
+          "category": "shop",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Old-school candy shop great for kids and nostalgia alike."
+        }
       ]
     },
     {
@@ -310,9 +1373,30 @@
       "description": "U.S. Olympic training site on the Oklahoma River. Best for outdoor adventure, not dining — but Big Water Grill delivers post-adventure.",
       "color": "#2e7d9e",
       "spots": [
-        { "name": "Big Water Grill", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Riversport Adventure Park", "category": "activity", "status": "open", "hours": "Varies", "must": true, "note": "Whitewater rafting, kayaking, zip lining. US Olympic Training site." },
-        { "name": "Sandridge Sky Trail", "category": "activity", "status": "open", "hours": "Varies", "must": false, "note": "High ropes course with river views." }
+        {
+          "name": "Big Water Grill",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Waterfront dining on the Oklahoma River with a seafood-forward menu."
+        },
+        {
+          "name": "Riversport Adventure Park",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": true,
+          "note": "Whitewater rafting, kayaking, zip lining. US Olympic Training site."
+        },
+        {
+          "name": "Sandridge Sky Trail",
+          "category": "activity",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "High ropes course with river views."
+        }
       ]
     },
     {
@@ -321,9 +1405,30 @@
       "description": "OKC's grand urban park and its surrounding spots.",
       "color": "#4a8b6f",
       "spots": [
-        { "name": "Spark", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Social Capital", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Park Grounds", "category": "coffee", "status": "open", "hours": "Varies", "must": false, "note": "Coffee in the park." }
+        {
+          "name": "Spark",
+          "category": "restaurant",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Contemporary American cuisine in the Scissortail Park area."
+        },
+        {
+          "name": "Social Capital",
+          "category": "bar_drinks",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Bar and gathering spot near Scissortail with a rooftop view."
+        },
+        {
+          "name": "Park Grounds",
+          "category": "coffee",
+          "status": "open",
+          "hours": "Varies",
+          "must": false,
+          "note": "Coffee in the park."
+        }
       ]
     }
   ]
