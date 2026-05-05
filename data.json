@@ -119,7 +119,7 @@
       "spots": [
         { "name": "Nonesuch", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Bon Appétit's America's Best New Restaurant 2018. Tasting menu, book ahead." },
         { "name": "Later Bye", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": true, "note": "James Beard nominated. The cocktail bar OKC deserves." },
-        { "name": "The Goose", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "" },
+        { "name": "The Goose", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Deli sandwiches. Burgers. Craft cocktails. Beer. Rooftop patio." },
         { "name": "Harvey Bakery", "category": "bakery", "status": "open", "hours": "Varies", "must": true, "note": "Best pastries in OKC." },
         { "name": "The Hall's Pizza Kitchen", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
         { "name": "Barrios Fine Mexican Dishes", "category": "mexican", "status": "open", "hours": "Varies", "must": false, "note": "Upscale Mexican, a long-time OKC staple." },
