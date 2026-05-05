@@ -437,6 +437,42 @@ main {
   margin-top: 6px;
 }
 
+.spot-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.spot-bottom-left { flex: 1; }
+
+.dir-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--dim);
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 5px 9px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+  background: none;
+}
+
+.dir-btn:hover {
+  color: var(--ink2);
+  border-color: var(--mid);
+}
+
 .spot-note {
   font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
@@ -748,19 +784,27 @@ function spotHTML(s) {
   const ico = ICONS[s.category]    || ICONS.restaurant;
   const cat = CAT_LABELS[s.category] || s.category;
   const showHours = s.hours && !['Varies','TBD','Always','Annual','Monthly','Game days'].includes(s.hours);
+  const mapsQ = encodeURIComponent(s.name + ' Oklahoma City OK');
+  const mapsUrl = `https://maps.apple.com/?q=${mapsQ}`;
+  const dirIcon = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`;
   return `
 <div class="spot-card">
   <div class="spot-top">
     <div class="spot-name">${s.name}</div>
     ${s.must ? `<div class="must-pip" title="Must Visit">${MUST_SVG}</div>` : ''}
   </div>
-  <div class="spot-tags">
-    <span class="stag">${ico}${cat}</span>
-    <span class="dot-sep"></span>
-    <span class="stag ${st.cls}">${st.label}</span>
+  <div class="spot-bottom">
+    <div class="spot-bottom-left">
+      <div class="spot-tags">
+        <span class="stag">${ico}${cat}</span>
+        <span class="dot-sep"></span>
+        <span class="stag ${st.cls}">${st.label}</span>
+      </div>
+      ${showHours ? `<div class="spot-hours">${s.hours}</div>` : ''}
+      ${s.note ? `<div class="spot-note">${s.note}</div>` : ''}
+    </div>
+    <a href="${mapsUrl}" target="_blank" rel="noopener" class="dir-btn" title="Open in Maps">${dirIcon}Directions</a>
   </div>
-  ${showHours ? `<div class="spot-hours">${s.hours}</div>` : ''}
-  ${s.note ? `<div class="spot-note">${s.note}</div>` : ''}
 </div>`;
 }
 
