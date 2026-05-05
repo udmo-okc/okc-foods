@@ -85,7 +85,7 @@ body::after {
 
 /* HERO */
 .hero {
-  padding: 60px 32px 52px;
+  padding: 44px 32px 40px;
   border-bottom: 1px solid var(--rule);
   background: var(--cream);
 }
@@ -93,10 +93,6 @@ body::after {
 .hero-inner {
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 40px;
 }
 
 .hero-eyebrow {
@@ -105,14 +101,14 @@ body::after {
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--mid);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   opacity: 0;
   animation: rise 0.5s ease 0.05s forwards;
 }
 
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(54px, 9vw, 112px);
+  font-size: clamp(48px, 9vw, 112px);
   font-weight: 300;
   line-height: 0.9;
   letter-spacing: -0.025em;
@@ -128,32 +124,35 @@ h1 em { font-style: italic; color: var(--mid); }
   font-size: 13px;
   color: var(--mid);
   max-width: 340px;
-  margin-top: 22px;
+  margin-top: 16px;
   line-height: 1.7;
   opacity: 0;
   animation: rise 0.6s ease 0.3s forwards;
 }
 
+/* Stats: horizontal strip below title, always */
 .hero-stats {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: flex-end;
+  flex-direction: row;
+  gap: 0;
+  margin-top: 32px;
   opacity: 0;
   animation: rise 0.6s ease 0.4s forwards;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
 }
 
 .s-row {
-  text-align: right;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--rule2);
-  min-width: 88px;
+  flex: 1;
+  padding-right: 24px;
+  border-right: 1px solid var(--rule);
+  margin-right: 24px;
 }
-.s-row:last-child { border-bottom: none; padding-bottom: 0; }
+.s-row:last-child { border-right: none; margin-right: 0; padding-right: 0; }
 
 .s-n {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1;
   color: var(--ink);
@@ -166,6 +165,8 @@ h1 em { font-style: italic; color: var(--mid); }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--dim);
+  margin-top: 3px;
+  display: block;
 }
 
 /* ── UNIFIED CONTROL ZONE ── */
@@ -304,7 +305,7 @@ main {
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  padding: 26px 0 18px;
+  padding: 20px 0 14px;
   cursor: pointer;
   user-select: none;
 }
@@ -509,14 +510,16 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 640px) {
-  .masthead, .hero, .search-zone, main, footer { padding-left: 16px; padding-right: 16px; }
-  .nav-scroll, .cat-inner { padding-left: 16px; padding-right: 16px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 28px; }
-  .hero-stats { flex-direction: row; align-items: flex-start; gap: 20px; }
-  .s-row { text-align: left; }
+  .masthead { padding-left: 20px; padding-right: 20px; }
+  .hero { padding: 32px 20px 28px; }
+  .hero-sub { display: none; }
+  .hero-stats { margin-top: 24px; padding-top: 16px; }
+  .s-n { font-size: 26px; }
+  .ctrl-inner { padding-left: 20px; padding-right: 0; }
+  main { padding: 0 20px 80px; }
+  footer { padding: 18px 20px; flex-direction: column; gap: 4px; align-items: flex-start; }
   .spots-grid { grid-template-columns: 1fr; }
-  .search-wrap { min-width: 0; width: 100%; }
-  footer { flex-direction: column; gap: 6px; }
+  .ctrl-search input { width: 90px; }
 }
 </style>
 
@@ -530,11 +533,9 @@ footer {
 
 <header class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">Food &amp; Culture by Neighborhood</div>
-      <h1><strong>Oklahoma</strong> <em>City</em></h1>
-      <p class="hero-sub">Every neighborhood, every vibe — curated by someone who actually lives here.</p>
-    </div>
+    <div class="hero-eyebrow">Food &amp; Culture by Neighborhood</div>
+    <h1><strong>Oklahoma</strong> <em>City</em></h1>
+    <p class="hero-sub">Every neighborhood, every vibe — curated by someone who actually lives here.</p>
     <div class="hero-stats">
       <div class="s-row"><span class="s-n" id="statSpots">—</span><span class="s-l">Spots</span></div>
       <div class="s-row"><span class="s-n" id="statMust">—</span><span class="s-l">Must Visit</span></div>
@@ -656,6 +657,7 @@ function buildNav() {
     btn.className = 'nav-btn';
     btn.dataset.district = d.id;
     btn.textContent = d.name
+      .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '')
       .replace('Mexican & Latin', 'Mex & Latin')
       .replace(/\s?District$/i, '')
       .replace(/^Historic\s/i, '')
@@ -735,11 +737,13 @@ function renderDistricts() {
     const metaParts = [hits.length + ' spots'];
     if (mustN) metaParts.push(mustN + ' must visit');
     const wasCollapsed = el.classList.contains('collapsed');
+    // strip emoji from displayed title
+    const cleanTitle = d.name.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '').trim();
 
     el.innerHTML = `
       <div class="district-hd" onclick="toggleBlock('${d.id}')">
         <div>
-          <div class="d-title">${d.name}</div>
+          <div class="d-title">${cleanTitle}</div>
           <div class="d-meta">${metaParts.join(' &nbsp;·&nbsp; ')}</div>
           ${d.description ? `<div class="d-desc">${d.description}</div>` : ''}
         </div>
