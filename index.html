@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,19 +11,25 @@
 
 <style>
 :root {
-  --ink: #111010;
-  --ink2: #2a2826;
-  --ink3: #3e3b38;
-  --mid: #6b6560;
-  --dim: #9e9890;
-  --rule: #d4cfc8;
-  --rule2: #e8e3dc;
-  --paper: #f5f1eb;
-  --paper2: #ede8e0;
-  --paper3: #e4ddd3;
-  --cream: #faf8f4;
-  --red: #b83d2a;
-  --gold: #8a6f3a;
+  --ink: #f0ece4;
+  --ink2: #d8d2c8;
+  --ink3: #b8b0a4;
+  --mid: #8a8278;
+  --dim: #5a5550;
+  --rule: #2a2826;
+  --rule2: #222020;
+  --paper: #181614;
+  --paper2: #141210;
+  --paper3: #111010;
+  --cream: #0e0d0c;
+  --red: #c4523a;
+  --gold: #c4a44a;
+  /* control zone dark */
+  --ctrl-bg: #161412;
+  --ctrl-border: #2a2826;
+  --ctrl-active: #f0ece4;
+  --ctrl-dim: #5a5550;
+  --ctrl-hover: #a09890;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,12 +57,13 @@ body::after {
 
 /* MASTHEAD */
 .masthead {
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
   padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
+  background: var(--paper2);
 }
 
 .masthead-logo {
@@ -79,6 +87,7 @@ body::after {
 .hero {
   padding: 60px 32px 52px;
   border-bottom: 1px solid var(--rule);
+  background: var(--cream);
 }
 
 .hero-inner {
@@ -159,27 +168,31 @@ h1 em { font-style: italic; color: var(--mid); }
   color: var(--dim);
 }
 
-/* STICKY NAV */
-.sticky-nav {
+/* ── UNIFIED CONTROL ZONE ── */
+.ctrl-zone {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: rgba(250,248,244,0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--rule);
+  background: var(--ctrl-bg);
+  border-bottom: 1px solid var(--ctrl-border);
+  backdrop-filter: blur(12px);
 }
 
-.nav-scroll {
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+.ctrl-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 32px;
 }
 
-.nav-scroll::-webkit-scrollbar { display: none; }
+/* Row 1: district tabs */
+.ctrl-districts {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--rule2);
+  -webkit-overflow-scrolling: touch;
+}
+.ctrl-districts::-webkit-scrollbar { display: none; }
 
 .nav-btn {
   background: none;
@@ -189,36 +202,33 @@ h1 em { font-style: italic; color: var(--mid); }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--dim);
-  padding: 13px 14px;
+  color: var(--ctrl-dim);
+  padding: 12px 14px;
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
   transition: color 0.15s, border-color 0.15s;
   flex-shrink: 0;
 }
+.nav-btn:hover { color: var(--ctrl-hover); }
+.nav-btn.active { color: var(--ctrl-active); border-bottom-color: var(--ctrl-active); }
 
-.nav-btn:hover { color: var(--ink2); }
-.nav-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
-
-.nav-sep { width: 1px; background: var(--rule2); margin: 10px 2px; flex-shrink: 0; }
-
-/* CATEGORY BAR */
-.cat-bar {
-  background: var(--paper2);
-  border-bottom: 1px solid var(--rule);
+/* Row 2: category + search in same row */
+.ctrl-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
-.cat-inner {
+.ctrl-cats {
   display: flex;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 0 32px;
-  max-width: 1100px;
-  margin: 0 auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
-
-.cat-inner::-webkit-scrollbar { display: none; }
+.ctrl-cats::-webkit-scrollbar { display: none; }
 
 .cat-btn {
   background: none;
@@ -227,57 +237,50 @@ h1 em { font-style: italic; color: var(--mid); }
   align-items: center;
   gap: 5px;
   font-family: 'Archivo Narrow', sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--dim);
-  padding: 9px 13px;
+  color: var(--ctrl-dim);
+  padding: 9px 12px;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s;
   flex-shrink: 0;
 }
-
-.cat-btn svg { flex-shrink: 0; opacity: 0.5; transition: opacity 0.15s; }
-.cat-btn:hover { color: var(--ink2); }
-.cat-btn:hover svg { opacity: 0.75; }
-.cat-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
+.cat-btn svg { flex-shrink: 0; opacity: 0.4; transition: opacity 0.15s; }
+.cat-btn:hover { color: var(--ctrl-hover); }
+.cat-btn:hover svg { opacity: 0.7; }
+.cat-btn.active { color: var(--ctrl-active); }
 .cat-btn.active svg { opacity: 1; }
 
-/* SEARCH */
-.search-zone {
-  padding: 14px 32px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.search-wrap {
-  display: inline-flex;
+.ctrl-search {
+  flex-shrink: 0;
+  display: flex;
   align-items: center;
-  gap: 9px;
-  background: var(--paper2);
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  padding: 8px 13px;
-  min-width: 320px;
+  gap: 8px;
+  padding: 7px 14px 7px 12px;
+  border-left: 1px solid var(--rule2);
 }
 
-.search-wrap svg { color: var(--dim); flex-shrink: 0; }
+.ctrl-search svg { color: var(--ctrl-dim); flex-shrink: 0; }
 
-.search-wrap input {
+.ctrl-search input {
   background: none;
   border: none;
   outline: none;
   font-family: 'Archivo', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   color: var(--ink);
-  width: 100%;
+  width: 180px;
 }
 
-.search-wrap input::placeholder { color: var(--dim); }
+.ctrl-search input::placeholder { color: var(--ctrl-dim); }
+
+@media (max-width: 640px) {
+  .ctrl-search input { width: 110px; }
+}
 
 /* MAIN */
 main {
@@ -474,12 +477,13 @@ main {
 
 /* FOOTER */
 footer {
-  border-top: 2px solid var(--ink);
+  border-top: 1px solid var(--rule);
   padding: 22px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  background: var(--paper2);
 }
 
 .foot-l {
@@ -515,6 +519,7 @@ footer {
   footer { flex-direction: column; gap: 6px; }
 }
 </style>
+
 </head>
 <body>
 
@@ -538,25 +543,23 @@ footer {
   </div>
 </header>
 
-<nav class="sticky-nav">
-  <div class="nav-scroll" id="navScroll">
-    <button class="nav-btn active" data-district="all">All</button>
-  </div>
-</nav>
-
-<div class="cat-bar">
-  <div class="cat-inner" id="catInner">
-    <button class="cat-btn active" data-cat="all">
-      <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="4" height="4" rx="0.5"/><rect x="7" y="1" width="4" height="4" rx="0.5"/><rect x="1" y="7" width="4" height="4" rx="0.5"/><rect x="7" y="7" width="4" height="4" rx="0.5"/></svg>
-      All
-    </button>
-  </div>
-</div>
-
-<div class="search-zone">
-  <div class="search-wrap">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="searchInput" placeholder="Search spots, neighborhoods, notes…" autocomplete="off" spellcheck="false">
+<div class="ctrl-zone">
+  <div class="ctrl-inner">
+    <div class="ctrl-districts" id="navScroll">
+      <button class="nav-btn active" data-district="all">All</button>
+    </div>
+    <div class="ctrl-bottom">
+      <div class="ctrl-cats" id="catInner">
+        <button class="cat-btn active" data-cat="all">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="4" height="4" rx="0.5"/><rect x="7" y="1" width="4" height="4" rx="0.5"/><rect x="1" y="7" width="4" height="4" rx="0.5"/><rect x="7" y="7" width="4" height="4" rx="0.5"/></svg>
+          All
+        </button>
+      </div>
+      <div class="ctrl-search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search spots…" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
   </div>
 </div>
 
@@ -787,5 +790,6 @@ function io() {
 
 load();
 </script>
+
 </body>
 </html>
