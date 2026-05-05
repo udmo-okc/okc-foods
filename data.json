@@ -7,7 +7,7 @@
   "categories": {
     "mexican": {
       "id": "mexican",
-      "label": "Mexican & Latin",
+      "label": "🇲🇽 Mexican & Latin",
       "color": "#e85d26"
     },
     "restaurant": {
@@ -49,7 +49,7 @@
   "districts": [
     {
       "id": "mexican-authentic",
-      "name": "Mexican & Latin",
+      "name": "OKC 🇲🇽 Mexican & Latin",
       "description": "Authentic Mexican and Latin spots scattered across the city — the real ones the locals go to.",
       "color": "#e85d26",
       "spots": [
@@ -72,11 +72,7 @@
         { "name": "Birrieria Calvillo", "category": "mexican", "status": "open", "hours": "8AM–7PM", "must": false, "note": "" },
         { "name": "Super Tortas El Chavo", "category": "mexican", "status": "open", "hours": "9AM–10PM", "must": true, "note": "Tortas are massive. Don't sleep on this one." },
         { "name": "Cafe Kacao", "category": "restaurant", "status": "open", "hours": "7:30AM–2:30PM", "must": true, "note": "Guatemalan brunch. Voted Best Brunch in OKC. Join waitlist ahead of time." },
-        { "name": "La Oaxaquena Bakery & Restaurant", "category": "bakery", "status": "temp-closed", "hours": "TBD", "must": false, "note": "Oaxacan bakery and restaurant, temporarily closed." },
-        { "name": "Cafe Antigua", "category": "coffee", "status": "open", "hours": "8AM–3PM", "must": false, "note": "Breakfast and brunch spot." },
-        { "name": "Taqueria Los Desvelados", "category": "mexican", "status": "closed-today", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Restaurante Los Artesanos", "category": "mexican", "status": "closed-today", "hours": "Varies", "must": false, "note": "" },
-        { "name": "Carnitas El Patron", "category": "mexican", "status": "closed-today", "hours": "Varies", "must": false, "note": "" }
+        { "name": "Cafe Antigua", "category": "coffee", "status": "open", "hours": "8AM–3PM", "must": false, "note": "Breakfast and brunch spot." }
       ]
     },
     {
@@ -153,10 +149,8 @@
         { "name": "Tucker's Onion Burgers", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Oklahoma onion smash burger. An OKC institution." },
         { "name": "Cheever's Cafe", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "OKC classic in a converted flower shop." },
         { "name": "Big Truck Tacos", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
-        { "name": "ChicknBeer", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
         { "name": "The Drake", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "" },
         { "name": "Pizzeria Gusto", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Neapolitan-style pizza." },
-        { "name": "The Pump Bar", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": true, "note": "Best dive bar patio in OKC. Converted gas station." },
         { "name": "Pony Boy", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
         { "name": "Bunker Bar", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": false, "note": "" },
         { "name": "Blue Note", "category": "bar_drinks", "status": "open", "hours": "Varies", "must": true, "note": "Burlesque and jazz. Truly one of a kind." },
