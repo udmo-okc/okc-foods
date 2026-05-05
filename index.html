@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -169,7 +168,7 @@ h1 em { font-style: italic; color: var(--mid); }
   display: block;
 }
 
-/* ── UNIFIED CONTROL ZONE ── */
+/* ── SINGLE NAV BAR ── */
 .ctrl-zone {
   position: sticky;
   top: 0;
@@ -182,15 +181,16 @@ h1 em { font-style: italic; color: var(--mid); }
 .ctrl-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 0 0 20px;
+  display: flex;
+  align-items: stretch;
 }
 
-/* Row 1: district tabs */
 .ctrl-districts {
   display: flex;
   overflow-x: auto;
   scrollbar-width: none;
-  border-bottom: 1px solid var(--rule2);
+  flex: 1;
   -webkit-overflow-scrolling: touch;
 }
 .ctrl-districts::-webkit-scrollbar { display: none; }
@@ -204,69 +204,53 @@ h1 em { font-style: italic; color: var(--mid); }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ctrl-dim);
-  padding: 12px 14px;
+  padding: 14px 14px;
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
   transition: color 0.15s, border-color 0.15s;
   flex-shrink: 0;
 }
 .nav-btn:hover { color: var(--ctrl-hover); }
 .nav-btn.active { color: var(--ctrl-active); border-bottom-color: var(--ctrl-active); }
 
-/* Row 2: category + search in same row */
-.ctrl-bottom {
+/* Search: icon button on the right, expands inline */
+.ctrl-search-wrap {
   display: flex;
   align-items: center;
-  gap: 0;
+  flex-shrink: 0;
+  border-left: 1px solid var(--ctrl-border);
 }
 
-.ctrl-cats {
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  flex: 1;
-  -webkit-overflow-scrolling: touch;
-}
-.ctrl-cats::-webkit-scrollbar { display: none; }
-
-.cat-btn {
+.search-toggle {
   background: none;
   border: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ctrl-dim);
-  padding: 9px 12px;
   cursor: pointer;
-  white-space: nowrap;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--ctrl-dim);
   transition: color 0.15s;
-  flex-shrink: 0;
 }
-.cat-btn svg { flex-shrink: 0; opacity: 0.4; transition: opacity 0.15s; }
-.cat-btn:hover { color: var(--ctrl-hover); }
-.cat-btn:hover svg { opacity: 0.7; }
-.cat-btn.active { color: var(--ctrl-active); }
-.cat-btn.active svg { opacity: 1; }
+.search-toggle:hover { color: var(--ctrl-hover); }
+.search-toggle.open { color: var(--ctrl-active); }
 
-.ctrl-search {
-  flex-shrink: 0;
+.search-expand {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 14px 7px 12px;
-  border-left: 1px solid var(--rule2);
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width 0.25s ease, padding 0.25s ease;
+  padding: 0;
+}
+.search-expand.open {
+  max-width: 200px;
+  padding-right: 14px;
 }
 
-.ctrl-search svg { color: var(--ctrl-dim); flex-shrink: 0; }
-
-.ctrl-search input {
+.search-expand input {
   background: none;
   border: none;
   outline: none;
@@ -274,14 +258,10 @@ h1 em { font-style: italic; color: var(--mid); }
   font-size: 12px;
   font-weight: 300;
   color: var(--ink);
-  width: 180px;
+  width: 160px;
+  white-space: nowrap;
 }
-
-.ctrl-search input::placeholder { color: var(--ctrl-dim); }
-
-@media (max-width: 640px) {
-  .ctrl-search input { width: 110px; }
-}
+.search-expand input::placeholder { color: var(--ctrl-dim); }
 
 /* MAIN */
 main {
@@ -522,7 +502,6 @@ footer {
   .ctrl-search input { width: 90px; }
 }
 </style>
-
 </head>
 <body>
 
@@ -549,17 +528,13 @@ footer {
     <div class="ctrl-districts" id="navScroll">
       <button class="nav-btn active" data-district="all">All</button>
     </div>
-    <div class="ctrl-bottom">
-      <div class="ctrl-cats" id="catInner">
-        <button class="cat-btn active" data-cat="all">
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="4" height="4" rx="0.5"/><rect x="7" y="1" width="4" height="4" rx="0.5"/><rect x="1" y="7" width="4" height="4" rx="0.5"/><rect x="7" y="7" width="4" height="4" rx="0.5"/></svg>
-          All
-        </button>
+    <div class="ctrl-search-wrap">
+      <div class="search-expand" id="searchExpand">
+        <input type="text" id="searchInput" placeholder="Search…" autocomplete="off" spellcheck="false">
       </div>
-      <div class="ctrl-search">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="searchInput" placeholder="Search spots…" autocomplete="off" spellcheck="false">
-      </div>
+      <button class="search-toggle" id="searchToggle" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
     </div>
   </div>
 </div>
@@ -633,12 +608,22 @@ function allSpots() {
 
 function boot() {
   buildNav();
-  buildCatBar();
   buildBlocks();
   setStats();
+  // search input
   document.getElementById('searchInput').addEventListener('input', e => {
     q = e.target.value.toLowerCase().trim();
     render();
+  });
+  // search toggle
+  const toggle = document.getElementById('searchToggle');
+  const expand = document.getElementById('searchExpand');
+  const input  = document.getElementById('searchInput');
+  toggle.addEventListener('click', () => {
+    const isOpen = expand.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) { setTimeout(() => input.focus(), 260); }
+    else { input.value = ''; q = ''; render(); }
   });
   io();
 }
@@ -658,7 +643,6 @@ function buildNav() {
     btn.dataset.district = d.id;
     btn.textContent = d.name
       .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '')
-      .replace('Mexican & Latin', 'Mex & Latin')
       .replace(/\s?District$/i, '')
       .replace(/^Historic\s/i, '')
       .trim();
@@ -703,7 +687,6 @@ function buildCatBar() {
 
 function match(s, dId) {
   if (activeDist !== 'all' && activeDist !== dId) return false;
-  if (activeCat  !== 'all' && activeCat  !== s.category) return false;
   if (q) {
     const hay = [s.name, s.category, s.note||'', dId, CAT_LABELS[s.category]||''].join(' ').toLowerCase();
     if (!hay.includes(q)) return false;
@@ -794,6 +777,5 @@ function io() {
 
 load();
 </script>
-
 </body>
 </html>
