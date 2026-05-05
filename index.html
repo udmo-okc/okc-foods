@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKC Food & Culture Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --surface: #1f1f1f;
+    --surface2: #262626;
+    --border: #2a2a2a;
+    --border2: #333;
+    --text: #f0ece3;
+    --text2: #a09890;
+    --text3: #5a5550;
+    --gold: #c4a44a;
+    --gold2: #e8c46a;
+    --red: #e85d26;
+    --green: #4a8b6f;
+    --green2: #5eb38f;
+    --grain-opacity: 0.035;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* ---- HEADER ---- */
+  header {
+    position: relative;
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,164,74,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 88px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: var(--text2);
+    margin-top: 20px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.35s forwards;
+  }
+
+  .header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.5s forwards;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  /* ---- CONTROLS ---- */
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .controls-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .controls-inner::-webkit-scrollbar { display: none; }
+
+  .filter-group {
+    display: flex;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .filter-btn {
+    background: none;
+    border: none;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover { color: var(--text2); }
+
+  .filter-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .controls-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border2);
+    margin: 0 8px;
+    flex-shrink: 0;
+  }
+
+  /* ---- SEARCH ---- */
+  .search-wrap {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .search-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 12px 16px 12px 40px;
+    outline: none;
+    transition: border-color 0.2s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a5550' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 14px center;
+  }
+
+  .search-input:focus { border-color: var(--gold); }
+  .search-input::placeholder { color: var(--text3); }
+
+  /* ---- MAIN CONTENT ---- */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ---- MUST VISIT STRIP ---- */
+  .must-section {
+    margin-bottom: 64px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .section-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+  }
+
+  .must-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .must-card {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 16px 18px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+
+  .must-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--card-color, var(--gold));
+  }
+
+  .must-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border2);
+  }
+
+  .must-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .must-badge::before {
+    content: '★';
+    font-size: 10px;
+  }
+
+  .must-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .must-card-district {
+    font-size: 11px;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .must-card-note {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.4;
+  }
+
+  /* ---- DISTRICT SECTIONS ---- */
+  .districts-container { }
+
+  .district-section {
+    margin-bottom: 56px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .district-section.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .district-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    padding: 20px 0 16px;
+    border-top: 1px solid var(--border);
+    user-select: none;
+  }
+
+  .district-header:hover .district-name { color: var(--gold2); }
+
+  .district-header-left { flex: 1; }
+
+  .district-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700;
+    color: var(--text);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .district-color-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--dot-color);
+  }
+
+  .district-desc {
+    font-size: 13px;
+    color: var(--text3);
+    margin-top: 4px;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  .district-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .district-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+  }
+
+  .district-chevron {
+    color: var(--text3);
+    transition: transform 0.25s;
+    font-size: 12px;
+  }
+
+  .district-section.collapsed .district-chevron { transform: rotate(-90deg); }
+
+  .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    max-height: 2000px;
+    opacity: 1;
+  }
+
+  .district-section.collapsed .spots-grid {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  /* ---- SPOT CARD ---- */
+  .spot-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background 0.15s, border-color 0.15s;
+    position: relative;
+  }
+
+  .spot-card:hover {
+    background: var(--surface2);
+    border-color: var(--border2);
+  }
+
+  .spot-card.is-must {
+    border-left: 2px solid var(--gold);
+  }
+
+  .spot-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .spot-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .spot-must-star {
+    color: var(--gold);
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .spot-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .cat-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    background: var(--pill-bg, rgba(196,164,74,0.12));
+    color: var(--pill-color, var(--gold));
+    border: 1px solid var(--pill-border, rgba(196,164,74,0.2));
+  }
+
+  .status-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .status-open { color: var(--green2); }
+  .status-closed { color: #888; }
+  .status-temp-closed { color: #e8a44a; }
+  .status-opening-soon { color: #7ab0e8; }
+  .status-perm-closed { color: #666; text-decoration: line-through; }
+
+  .spot-hours {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+  }
+
+  .spot-note {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  /* ---- EMPTY STATE ---- */
+  .empty-state {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--text3);
+    display: none;
+  }
+
+  .empty-state.visible { display: block; }
+
+  .empty-state p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    line-height: 2;
+  }
+
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  footer a:hover { text-decoration: underline; }
+
+  /* ---- CATEGORY FILTER ROW ---- */
+  .cat-filters {
+    display: flex;
+    gap: 6px;
+    padding: 12px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-shrink: 0;
+  }
+
+  .cat-filters::-webkit-scrollbar { display: none; }
+
+  .cat-filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cat-filter-btn:hover { color: var(--text2); border-color: var(--border2); }
+
+  .cat-filter-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #0d0d0d;
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 600px) {
+    header { padding: 60px 20px 48px; }
+    .header-stats { gap: 20px; }
+    .stat-num { font-size: 26px; }
+    main { padding: 0 16px 60px; }
+    .search-wrap { padding: 16px; }
+    .must-grid { grid-template-columns: 1fr; }
+    .spots-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">Oklahoma City — A Local's Guide</div>
+  <h1>OKC <em>Food</em><br>& Culture</h1>
+  <p class="header-sub">Every neighborhood, every vibe. Curated by someone who actually lives here.</p>
+  <div class="header-stats" id="headerStats">
+    <div class="stat"><span class="stat-num" id="totalSpots">—</span><span class="stat-label">Total Spots</span></div>
+    <div class="stat"><span class="stat-num" id="totalMust">—</span><span class="stat-label">Must Visits</span></div>
+    <div class="stat"><span class="stat-num" id="totalDistricts">—</span><span class="stat-label">Districts</span></div>
+  </div>
+</header>
+
+<nav class="controls">
+  <div class="controls-inner">
+    <div class="filter-group" id="districtFilters">
+      <button class="filter-btn active" data-district="all">All Districts</button>
+    </div>
+    <div class="controls-divider"></div>
+    <div class="cat-filters" id="catFilters">
+      <button class="cat-filter-btn active" data-cat="all">All</button>
+    </div>
+  </div>
+</nav>
+
+<div class="search-wrap">
+  <input type="text" class="search-input" id="searchInput" placeholder="Search spots, districts, notes..." autocomplete="off" spellcheck="false">
+</div>
+
+<main id="mainContent">
+  <section class="must-section" id="mustSection">
+    <div class="section-header">
+      <h2 class="section-title">Must Visits</h2>
+      <span class="section-count" id="mustCount"></span>
+    </div>
+    <div class="must-grid" id="mustGrid"></div>
+  </section>
+
+  <div class="districts-container" id="districtsContainer"></div>
+  <div class="empty-state" id="emptyState"><p>No spots found for that search.</p></div>
+</main>
+
+<footer>
+  <div>Updated 2025 · Oklahoma City, OK</div>
+  <div style="margin-top:8px">
+    To add, edit, or remove spots — update <a href="data.json" target="_blank">data.json</a>
+  </div>
+</footer>
+
+<script>
+// ---- CATEGORY CONFIG ----
+const CAT_CONFIG = {
+  mexican:    { label: '🇲🇽 Mexican & Latin', bg: 'rgba(232,93,38,0.12)', color: '#e8856a', border: 'rgba(232,93,38,0.25)' },
+  restaurant: { label: '🍽 Restaurant',         bg: 'rgba(196,164,74,0.12)', color: '#c4a44a', border: 'rgba(196,164,74,0.25)' },
+  bar_drinks: { label: '🍸 Bar & Drinks',        bg: 'rgba(123,94,167,0.15)', color: '#a07ece', border: 'rgba(123,94,167,0.3)' },
+  coffee:     { label: '☕ Coffee',              bg: 'rgba(139,99,71,0.15)', color: '#c49a72', border: 'rgba(139,99,71,0.3)' },
+  shop:       { label: '🛍 Shop',               bg: 'rgba(74,139,111,0.12)', color: '#5ea87e', border: 'rgba(74,139,111,0.25)' },
+  seafood:    { label: '🦞 Seafood',            bg: 'rgba(46,125,158,0.12)', color: '#5aaece', border: 'rgba(46,125,158,0.25)' },
+  bakery:     { label: '🥐 Bakery & Sweets',    bg: 'rgba(212,135,94,0.12)', color: '#e0a070', border: 'rgba(212,135,94,0.25)' },
+  activity:   { label: '🎭 Activity',           bg: 'rgba(94,139,212,0.12)', color: '#7aaae0', border: 'rgba(94,139,212,0.25)' },
+};
+
+const STATUS_MAP = {
+  'open':          { label: 'Open',          cls: 'status-open' },
+  'closed-today':  { label: 'Closed Today',  cls: 'status-closed' },
+  'temp-closed':   { label: 'Temp Closed',   cls: 'status-temp-closed' },
+  'opening-soon':  { label: 'Opening Soon',  cls: 'status-opening-soon' },
+  'perm-closed':   { label: 'Perm. Closed',  cls: 'status-perm-closed' },
+};
+
+let DATA = null;
+let activeDistrict = 'all';
+let activeCat = 'all';
+let searchQuery = '';
+
+// ---- LOAD DATA ----
+async function loadData() {
+  try {
+    const res = await fetch('data.json?' + Date.now());
+    DATA = await res.json();
+  } catch (e) {
+    console.warn('Could not fetch data.json, this is expected in local file:// mode');
+    // Inline fallback so it works without a server too
+    DATA = window.__OKC_DATA__ || null;
+    if (!DATA) {
+      document.getElementById('mainContent').innerHTML =
+        '<p style="text-align:center;padding:80px 24px;color:#5a5550;font-family:\'DM Mono\',monospace;font-size:12px;">⚠ Serve from a local server or GitHub Pages to load data.<br><br>Run: <code style="color:#c4a44a">python3 -m http.server 8080</code></p>';
+      return;
+    }
+  }
+  init();
+}
+
+// ---- INIT ----
+function init() {
+  buildDistrictFilters();
+  buildCatFilters();
+  buildMustGrid();
+  buildDistrictSections();
+  updateStats();
+  setupSearch();
+  setupIntersectionObserver();
+}
+
+function allSpots() {
+  return DATA.districts.flatMap(d => d.spots.map(s => ({ ...s, districtId: d.id, districtName: d.name, districtColor: d.color })));
+}
+
+function updateStats() {
+  const spots = allSpots();
+  document.getElementById('totalSpots').textContent = spots.length;
+  document.getElementById('totalMust').textContent = spots.filter(s => s.must).length;
+  document.getElementById('totalDistricts').textContent = DATA.districts.length;
+}
+
+// ---- DISTRICT FILTERS (top nav) ----
+function buildDistrictFilters() {
+  const container = document.getElementById('districtFilters');
+  DATA.districts.forEach(d => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.district = d.id;
+    btn.textContent = d.name.replace(/🇲🇽\s?/g, '').replace(/\s?District/i, '');
+    btn.addEventListener('click', () => setDistrict(d.id));
+    container.appendChild(btn);
+  });
+  container.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+  container.querySelector('[data-district="all"]').addEventListener('click', () => setDistrict('all'));
+}
+
+function setDistrict(id) {
+  activeDistrict = id;
+  render();
+}
+
+// ---- CATEGORY FILTERS ----
+function buildCatFilters() {
+  const container = document.getElementById('catFilters');
+  Object.entries(CAT_CONFIG).forEach(([key, cfg]) => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-filter-btn';
+    btn.dataset.cat = key;
+    btn.textContent = cfg.label;
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = key;
+      render();
+    });
+    container.appendChild(btn);
+  });
+  container.querySelector('[data-cat="all"]').addEventListener('click', () => {
+    container.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
+    container.querySelector('[data-cat="all"]').classList.add('active');
+    activeCat = 'all';
+    render();
+  });
+}
+
+// ---- SEARCH ----
+function setupSearch() {
+  const input = document.getElementById('searchInput');
+  input.addEventListener('input', () => {
+    searchQuery = input.value.toLowerCase().trim();
+    render();
+  });
+}
+
+// ---- FILTER LOGIC ----
+function filterSpot(spot, districtId) {
+  if (activeDistrict !== 'all' && activeDistrict !== districtId) return false;
+  if (activeCat !== 'all' && spot.category !== activeCat) return false;
+  if (searchQuery) {
+    const haystack = [spot.name, spot.category, spot.note, districtId].join(' ').toLowerCase();
+    if (!haystack.includes(searchQuery)) return false;
+  }
+  return true;
+}
+
+// ---- RENDER ----
+function render() {
+  renderMustGrid();
+  renderDistricts();
+}
+
+// ---- MUST GRID ----
+function buildMustGrid() { renderMustGrid(); }
+
+function renderMustGrid() {
+  const grid = document.getElementById('mustGrid');
+  const countEl = document.getElementById('mustCount');
+  const section = document.getElementById('mustSection');
+
+  const mustSpots = DATA.districts.flatMap(d =>
+    d.spots
+      .filter(s => s.must && filterSpot(s, d.id))
+      .map(s => ({ ...s, districtId: d.id, districtName: d.name, districtColor: d.color }))
+  );
+
+  countEl.textContent = mustSpots.length + ' spots';
+
+  if (mustSpots.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+  section.style.display = '';
+
+  grid.innerHTML = mustSpots.map(s => {
+    const cat = CAT_CONFIG[s.category] || CAT_CONFIG.restaurant;
+    return `
+    <div class="must-card" style="--card-color:${s.districtColor}">
+      <div class="must-badge">Must Visit</div>
+      <div class="must-card-name">${s.name}</div>
+      <div class="must-card-district">${s.districtName}</div>
+      ${s.note ? `<div class="must-card-note">${s.note}</div>` : ''}
+      <div style="margin-top:6px">
+        <span class="cat-pill" style="--pill-bg:${cat.bg};--pill-color:${cat.color};--pill-border:${cat.border}">${cat.label}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ---- DISTRICT SECTIONS ----
+function buildDistrictSections() {
+  const container = document.getElementById('districtsContainer');
+  DATA.districts.forEach(d => {
+    const section = document.createElement('div');
+    section.className = 'district-section';
+    section.id = 'district-' + d.id;
+    section.dataset.districtId = d.id;
+    container.appendChild(section);
+  });
+  renderDistricts();
+}
+
+function renderDistricts() {
+  const container = document.getElementById('districtsContainer');
+  let anyVisible = false;
+
+  DATA.districts.forEach(d => {
+    const section = document.getElementById('district-' + d.id);
+    const filteredSpots = d.spots.filter(s => filterSpot(s, d.id));
+
+    if (filteredSpots.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = '';
+    anyVisible = true;
+
+    const mustCount = filteredSpots.filter(s => s.must).length;
+
+    section.innerHTML = `
+      <div class="district-header" onclick="toggleDistrict('${d.id}')">
+        <div class="district-header-left">
+          <div class="district-name">
+            <span class="district-color-dot" style="--dot-color:${d.color}"></span>
+            ${d.name}
+          </div>
+          ${d.description ? `<div class="district-desc">${d.description}</div>` : ''}
+        </div>
+        <div class="district-toggle">
+          <span class="district-count">${filteredSpots.length} spots${mustCount > 0 ? ` · ${mustCount} must` : ''}</span>
+          <span class="district-chevron">▼</span>
+        </div>
+      </div>
+      <div class="spots-grid">
+        ${filteredSpots.map(s => renderSpotCard(s)).join('')}
+      </div>
+    `;
+  });
+
+  const empty = document.getElementById('emptyState');
+  if (!anyVisible) {
+    empty.classList.add('visible');
+  } else {
+    empty.classList.remove('visible');
+  }
+
+  // Re-trigger intersection observer
+  setupIntersectionObserver();
+}
+
+function renderSpotCard(spot) {
+  const cat = CAT_CONFIG[spot.category] || CAT_CONFIG.restaurant;
+  const status = STATUS_MAP[spot.status] || STATUS_MAP['open'];
+  return `
+  <div class="spot-card${spot.must ? ' is-must' : ''}">
+    <div class="spot-card-top">
+      <span class="spot-name">${spot.name}</span>
+      ${spot.must ? '<span class="spot-must-star">★</span>' : ''}
+    </div>
+    <div class="spot-meta">
+      <span class="cat-pill" style="--pill-bg:${cat.bg};--pill-color:${cat.color};--pill-border:${cat.border}">${cat.label}</span>
+      <span class="status-pill ${status.cls}">${status.label}</span>
+    </div>
+    ${spot.hours && spot.hours !== 'Varies' && spot.hours !== 'TBD' ? `<div class="spot-hours">${spot.hours}</div>` : ''}
+    ${spot.note ? `<div class="spot-note">${spot.note}</div>` : ''}
+  </div>`;
+}
+
+// ---- COLLAPSE/EXPAND ----
+function toggleDistrict(id) {
+  const section = document.getElementById('district-' + id);
+  section.classList.toggle('collapsed');
+}
+
+// ---- INTERSECTION OBSERVER (fade in districts) ----
+function setupIntersectionObserver() {
+  const sections = document.querySelectorAll('.district-section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05 });
+  sections.forEach(s => obs.observe(s));
+}
+
+// ---- START ----
+loadData();
+</script>
+</body>
+</html>
