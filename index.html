@@ -171,18 +171,8 @@ h1 em { font-style: italic; color: var(--mid); }
 
 /* ── SINGLE NAV BAR ── */
 .ctrl-zone {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background 0.2s ease, border-color 0.2s ease;
-  isolation: isolate;
-}
-
-.ctrl-zone.scrolled {
   background: var(--ctrl-bg);
-  border-bottom-color: var(--ctrl-border);
+  border-bottom: 1px solid var(--ctrl-border);
 }
 
 .ctrl-inner {
@@ -829,12 +819,6 @@ function io() {
 }
 
 load();
-
-// Nav solidifies on scroll
-const ctrlZone = document.querySelector('.ctrl-zone');
-window.addEventListener('scroll', () => {
-  ctrlZone.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
 </script>
 
 </body>
