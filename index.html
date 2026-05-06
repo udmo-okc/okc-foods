@@ -33,7 +33,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+html { scroll-behavior: smooth; scroll-padding-top: 50px; }
 
 body {
   background: var(--cream);
@@ -57,9 +57,6 @@ body::after {
 
 /* MASTHEAD */
 .masthead {
-  position: sticky;
-  top: 0;
-  z-index: 201;
   border-bottom: 1px solid var(--rule);
   padding: 0 32px;
   display: flex;
@@ -177,9 +174,15 @@ h1 em { font-style: italic; color: var(--mid); }
   position: sticky;
   top: 0;
   z-index: 200;
-  background: var(--ctrl-bg);
-  border-bottom: 1px solid var(--ctrl-border);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
   isolation: isolate;
+}
+
+.ctrl-zone.scrolled {
+  background: var(--ctrl-bg);
+  border-bottom-color: var(--ctrl-border);
 }
 
 .ctrl-inner {
@@ -280,7 +283,7 @@ main {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.35s ease, transform 0.35s ease;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 50px;
 }
 
 .district-block.vis { opacity: 1; transform: none; }
@@ -826,6 +829,12 @@ function io() {
 }
 
 load();
+
+// Nav solidifies on scroll
+const ctrlZone = document.querySelector('.ctrl-zone');
+window.addEventListener('scroll', () => {
+  ctrlZone.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 </script>
 
 </body>
