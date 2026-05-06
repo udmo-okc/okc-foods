@@ -1405,7 +1405,7 @@
       "description": "A stretch of N May Ave and the surrounding corridors — some of OKC's most underrated spots and longest-running institutions.",
       "color": "#7a8a6a",
       "spots": [
-        { "name": "Patty Wagon", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Deli sandwiches. Burgers. Craft cocktails. Beer. Rooftop patio." },
+        { "name": "Patty Wagon", "category": "restaurant", "status": "open", "hours": "Varies", "must": true, "note": "Locals say these are some of the best burgers in town! The Cali Rancher is incredible. Don't miss on their sauces!" },
         { "name": "Sheesh Mahal", "category": "restaurant", "status": "open", "hours": "11AM–8:40PM", "must": true, "note": "Pakistani and Indian cuisine since 1976. One of OKC's most respected spots. Order the butter chicken and garlic naan." },
         { "name": "Frankie's OKC", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Neighborhood bar and grill with a loyal local following." },
         { "name": "Chow's", "category": "restaurant", "status": "open", "hours": "Varies", "must": false, "note": "Chinese-American staple in the NW corridor, been around for decades." }
