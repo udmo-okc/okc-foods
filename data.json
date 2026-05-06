@@ -7,7 +7,7 @@
   "categories": {
     "mexican": {
       "id": "mexican",
-      "label": "🇲🇽 Mexican & Latin",
+      "label": "Mexican & Latin",
       "color": "#e85d26"
     },
     "restaurant": {
@@ -49,7 +49,7 @@
   "districts": [
     {
       "id": "mexican-authentic",
-      "name": "OKC 🇲🇽 Mexican & Latin",
+      "name": "Mexican & Latin",
       "description": "Authentic Mexican and Latin spots scattered across the city — the real ones the locals go to.",
       "color": "#e85d26",
       "spots": [
